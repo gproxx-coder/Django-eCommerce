@@ -12,6 +12,11 @@ COPY . /app/
 WORKDIR /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Doing migrations
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
+
 # Expose port
 EXPOSE 8000
 
