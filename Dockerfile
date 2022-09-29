@@ -12,6 +12,9 @@ COPY . /app/
 WORKDIR /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Setting up root app directory
+WORKDIR /app/ecommerce/
+
 # Doing migrations
 RUN python manage.py makemigrations
 RUN python manage.py migrate
@@ -21,5 +24,4 @@ RUN python manage.py migrate
 EXPOSE 8000
 
 # Running Django App
-WORKDIR /app/ecommerce/
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
