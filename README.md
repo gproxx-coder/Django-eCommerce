@@ -27,7 +27,14 @@ Change directory to ecommerce
 ```
 cd ecommerce
 ```
-4. Step four :
+
+4. Do Migrations
+```
+py manage.py makemigrations
+py manage.py migrate
+```
+
+5. Step four :
 Now you can run the server 
 ```
 py manage.py runserver
